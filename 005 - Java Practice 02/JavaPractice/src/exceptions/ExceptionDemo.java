@@ -8,8 +8,12 @@ package exceptions;
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
+import javax.imageio.IIOException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 public class ExceptionDemo {
 
@@ -19,8 +23,18 @@ public class ExceptionDemo {
             var reader = new FileReader("file.txt");
             System.out.println("File opened");
 
-        } catch (FileNotFoundException ex) {
-            System.out.println(ex.getMessage());
+            var value = reader.read();
+            new SimpleDateFormat().parse("");
+
+//        } catch (FileNotFoundException ex) {
+//            System.out.println(ex.getMessage());
+//        } catch (IOException e) {
+//            System.out.println("Could not read data");
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
+        } catch (IOException | ParseException e) {
+            System.out.println("Could not read data");
         }
     }
 }
