@@ -19,10 +19,9 @@ public class ExceptionDemo {
 
     public static void show() {
         // Checked Exception
-        FileReader reader = null;
+//        FileReader reader = null;
 
-        try {
-            reader = new FileReader("file.txt");
+        try (var reader = new FileReader("file.txt");) {
             System.out.println("File opened");
 
             var value = reader.read();
@@ -39,14 +38,15 @@ public class ExceptionDemo {
 //            System.out.println("Could not read data");
         } catch (IOException e) {
             System.out.println("Could not read data");
-        } finally {
-            if (reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
+//        finally {
+//            if (reader != null) {
+//                try {
+//                    reader.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
     }
 }
