@@ -19,12 +19,14 @@ public class ExceptionDemo {
 
     public static void show() {
         // Checked Exception
+        FileReader reader = null;
+
         try {
-            var reader = new FileReader("file.txt");
+            reader = new FileReader("file.txt");
             System.out.println("File opened");
 
             var value = reader.read();
-            new SimpleDateFormat().parse("");
+//            new SimpleDateFormat().parse("");
 
 //        } catch (FileNotFoundException ex) {
 //            System.out.println(ex.getMessage());
@@ -33,8 +35,18 @@ public class ExceptionDemo {
 //        } catch (ParseException e) {
 //            e.printStackTrace();
 //        }
-        } catch (IOException | ParseException e) {
+//        } catch (IOException | ParseException e) {
+//            System.out.println("Could not read data");
+        } catch (IOException e) {
             System.out.println("Could not read data");
+        } finally {
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }
