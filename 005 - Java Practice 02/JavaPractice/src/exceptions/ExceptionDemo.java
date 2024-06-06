@@ -18,6 +18,15 @@ import java.text.SimpleDateFormat;
 
 public class ExceptionDemo {
 
+    public static void withdraw() {
+        var account = new Account();
+        try {
+            account.withdraw(10);
+        } catch (InsufficientFundException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
     public static void get()  throws IOException{
         var account = new Account();
         try {
