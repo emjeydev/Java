@@ -18,6 +18,16 @@ import java.text.SimpleDateFormat;
 
 public class ExceptionDemo {
 
+    public static void withdrawChain() {
+        var account = new Account();
+        try {
+            account.withdrawChain(10);
+        } catch (AccountException e) {
+            var cause = e.getCause();
+            System.out.println(cause.getMessage());
+        }
+    }
+
     public static void withdraw() {
         var account = new Account();
         try {

@@ -22,7 +22,24 @@ public class Account {
     }
 
     public void withdraw(float value) throws InsufficientFundException {
-        if (value>balance)
+        if (value > balance)
             throw new InsufficientFundException();
+    }
+
+    public void withdrawChain(float value) throws AccountException {
+
+        /* first way :
+
+        var fundsException = new InsufficientFundException();
+        var accountException = new AccountException();
+        accountException.initCause(fundsException);
+        throw accountException;
+
+         */
+
+        // Better way
+
+        if (value > balance)
+            throw new AccountException(new InsufficientFundException());
     }
 }

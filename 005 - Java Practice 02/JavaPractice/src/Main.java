@@ -18,6 +18,6 @@ public class Main {
 //            System.out.println("An unexpected error occurred");
 //        }
 
-        ExceptionDemo.withdraw();
+        ExceptionDemo.withdrawChain();
     }
 }
