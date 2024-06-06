@@ -21,6 +21,13 @@ public class ExceptionDemo {
         // Checked Exception
 //        FileReader reader = null;
 
+        var account = new Account();
+        try {
+            account.deposit(1);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         try (var reader = new FileReader("file.txt");) {
             System.out.println("File opened");
 
