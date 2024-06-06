@@ -1,13 +1,5 @@
 package exceptions;
 
-// This file is made by EmJey
-// Project: JavaPractice.java
-// FileName: ExceptionDemo.java
-// Date: 2024/06/05
-// Modified Date: 2024/06/05
-// Email: emjeydev@gmail.com
-// Github: emjeydev
-
 import javax.imageio.IIOException;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -15,18 +7,30 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+
+// This file is made by EmJey
+// Project: JavaPractice.java
+// FileName: ExceptionDemo.java
+// Date: 2024/06/05
+// Modified Date: 2024/06/06
+// Email: emjeydev@gmail.com
+// Github: emjeydev
+
 public class ExceptionDemo {
 
-    public static void show() {
-        // Checked Exception
-//        FileReader reader = null;
-
+    public static void get()  throws IOException{
         var account = new Account();
         try {
             account.deposit(1);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("Logging");
+            throw e;
         }
+    }
+
+    public static void show() {
+        // Checked Exception
+//        FileReader reader = null;
 
         try (var reader = new FileReader("file.txt");) {
             System.out.println("File opened");
