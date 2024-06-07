@@ -1,5 +1,6 @@
 import exceptions.ExceptionDemo;
 import generics.GenericList;
+import generics.Instructor;
 import generics.User;
 import generics.Utils;
 
@@ -44,12 +45,27 @@ public class Main {
         else
             System.out.println("user1 > user2");
 
+
         var max = Utils.max(1, 3);
         System.out.println(max);
+
 
         var maxUser = Utils.max(new User(140), new User(50));
         System.out.println(maxUser);
 
+
         Utils.print(1, "One");
+
+
+        User user = new Instructor(10);
+        Utils.printUser(user);
+
+
+        var instructor = new GenericList<Instructor>();
+        instructor.add(new Instructor(20));
+        instructor.add(new Instructor(40));
+        instructor.add(new Instructor(60));
+
+        Utils.printUsers(instructor);
     }
 }
