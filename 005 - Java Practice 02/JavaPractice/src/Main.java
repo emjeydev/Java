@@ -1,11 +1,4 @@
-import collections.Customer;
-import collections.EmailComparator;
-import collections.ListDemo;
-import collections.QueueDemo;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import collections.*;
 
 // This file is made by EmJey
 // Project: JavaPractice.java
@@ -97,7 +90,8 @@ public class Main {
 //        System.out.println("Comparing using comparable: " + customers);
 
 
-        QueueDemo.queueUsage();
+//        QueueDemo.queueUsage();
 
+        SetDemo.setUsage();
     }
 }
