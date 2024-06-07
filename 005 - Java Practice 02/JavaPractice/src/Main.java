@@ -49,5 +49,7 @@ public class Main {
 
         var maxUser = Utils.max(new User(140), new User(50));
         System.out.println(maxUser);
+
+        Utils.print(1, "One");
     }
 }
