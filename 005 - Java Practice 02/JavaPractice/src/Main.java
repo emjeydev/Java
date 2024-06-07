@@ -92,6 +92,8 @@ public class Main {
 
 //        QueueDemo.queueUsage();
 
-        SetDemo.setUsage();
+//        SetDemo.setUsage();
+
+        MapDemo.mapUsage();
     }
 }

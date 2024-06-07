@@ -1,7 +1,15 @@
 package collections;
 
-
 import java.util.*;
+
+// This file is made by EmJey
+// Project: JavaPractice.java
+// FileName: SetDemo.java
+// Date: 2024/06/07
+// Modified Date: 2024/06/07
+// Email: emjeydev@gmail.com
+// Github: emjeydev
+
 
 public class SetDemo {
     public static void setUsage() {
