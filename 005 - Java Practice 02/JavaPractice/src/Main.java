@@ -1,4 +1,9 @@
+import collections.Customer;
 import collections.ListDemo;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 // This file is made by EmJey
 // Project: JavaPractice.java
@@ -77,6 +82,14 @@ public class Main {
 
 //        CollectionDemo.collectionUsage();
 
-        ListDemo.listUsage();
+//        ListDemo.listUsage();
+
+        List<Customer> customers = new ArrayList<>();
+        customers.add(new Customer("c"));
+        customers.add(new Customer("z"));
+        customers.add(new Customer("a"));
+        customers.add(new Customer("b"));
+        Collections.sort(customers);
+        System.out.println(customers);
     }
 }
