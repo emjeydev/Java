@@ -1,4 +1,4 @@
-import collections.CollectionDemo;
+import collections.ListDemo;
 
 // This file is made by EmJey
 // Project: JavaPractice.java
@@ -75,6 +75,8 @@ public class Main {
 //            System.out.println(item);
 
 
-        CollectionDemo.collectionUsage();
+//        CollectionDemo.collectionUsage();
+
+        ListDemo.listUsage();
     }
 }
