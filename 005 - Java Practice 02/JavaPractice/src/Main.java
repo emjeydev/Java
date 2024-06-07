@@ -1,4 +1,5 @@
 import collections.Customer;
+import collections.EmailComparator;
 import collections.ListDemo;
 
 import java.util.ArrayList;
@@ -85,11 +86,13 @@ public class Main {
 //        ListDemo.listUsage();
 
         List<Customer> customers = new ArrayList<>();
-        customers.add(new Customer("c"));
-        customers.add(new Customer("z"));
-        customers.add(new Customer("a"));
-        customers.add(new Customer("b"));
+        customers.add(new Customer("c", "e3"));
+        customers.add(new Customer("z", "e2"));
+        customers.add(new Customer("a", "e1"));
+        customers.add(new Customer("b", "e5"));
         Collections.sort(customers);
-        System.out.println(customers);
+        System.out.println("Comparing using comparable: " + customers);
+        Collections.sort(customers, new EmailComparator());
+        System.out.println("Comparing using comparable: " + customers);
     }
 }
