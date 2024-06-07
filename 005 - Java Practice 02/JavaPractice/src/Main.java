@@ -1,6 +1,7 @@
 import exceptions.ExceptionDemo;
 import generics.GenericList;
 import generics.User;
+import generics.Utils;
 
 import java.io.IOException;
 
@@ -42,5 +43,8 @@ public class Main {
             System.out.println("user1 == user2");
         else
             System.out.println("user1 > user2");
+
+        var max = Utils.max(1, 3);
+        System.out.println(max);
     }
 }
