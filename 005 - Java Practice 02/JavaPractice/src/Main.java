@@ -1,10 +1,4 @@
-import exceptions.ExceptionDemo;
-import generics.GenericList;
-import generics.Instructor;
-import generics.User;
-import generics.Utils;
-
-import java.io.IOException;
+import collections.CollectionDemo;
 
 // This file is made by EmJey
 // Project: JavaPractice.java
@@ -71,13 +65,16 @@ public class Main {
 
         /* Collections */
 
-        var list = new GenericList<String>();
-        list.add("a");
-        list.add("b");
-        list.add("c");
-        list.add("d");
+//        var list = new GenericList<String>();
+//        list.add("a");
+//        list.add("b");
+//        list.add("c");
+//        list.add("d");
+//
+//        for (var item: list)
+//            System.out.println(item);
 
-        for (var item: list)
-            System.out.println(item);
+
+        CollectionDemo.collectionUsage();
     }
 }
