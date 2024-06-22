@@ -16,6 +16,15 @@ import java.util.function.Supplier;
 
 public class LambdasDemo {
 
+    public static void composingFunctionUsage() {
+        Function<String,String> replaceColon =  str -> str.replace(":", "=");
+        Function<String, String> addBraces = str -> "{" + str+"}";
+
+        // Declarative Programming
+        var result = replaceColon.andThen(addBraces).apply("key:value");
+        System.out.println(result);
+    }
+
     public static void functionInterfaceUsage() {
         Function<String, Integer> map = str -> str.length();
         var length = map.apply("Sky");
