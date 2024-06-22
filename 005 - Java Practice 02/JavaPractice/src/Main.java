@@ -101,5 +101,7 @@ public class Main {
         /* Lambdas */
 
         LambdasDemo.functionalInterfaceUsage();
+
+        LambdasDemo.anonymousInnerClassUsasge();
     }
 }
