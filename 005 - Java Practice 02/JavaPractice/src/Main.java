@@ -105,5 +105,7 @@ public class Main {
         LambdasDemo.anonymousInnerClassUsasge();
 
         LambdasDemo.lambdaExpressionUsage();
+
+        LambdasDemo.methodRefrenceUsage();
     }
 }

@@ -10,6 +10,11 @@ package lambdas;
 
 public class LambdasDemo {
 
+    public static void methodRefrenceUsage() {
+        // Class/Object::method without ()
+        greet(System.out::println);
+    }
+
     public static void lambdaExpressionUsage() {
 //        greet((String message) -> {System.out.println(message);});
         greet(message -> System.out.println(message));
