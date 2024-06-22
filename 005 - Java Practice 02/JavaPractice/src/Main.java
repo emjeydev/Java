@@ -113,5 +113,7 @@ public class Main {
         LambdasDemo.chainingConsumerUsage();
 
         LambdasDemo.supplierInterfaceUsage();
+
+        LambdasDemo.functionInterfaceUsage();
     }
 }

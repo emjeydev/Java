@@ -11,9 +11,16 @@ package lambdas;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class LambdasDemo {
+
+    public static void functionInterfaceUsage() {
+        Function<String, Integer> map = str -> str.length();
+        var length = map.apply("Sky");
+        System.out.println(length);
+    }
 
     public static void supplierInterfaceUsage() {
         Supplier<Double> list = () -> Math.random();
