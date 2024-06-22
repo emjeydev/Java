@@ -11,8 +11,15 @@ package lambdas;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Supplier;
 
 public class LambdasDemo {
+
+    public static void supplierInterfaceUsage() {
+        Supplier<Double> list = () -> Math.random();
+        var random = list.get();
+        System.out.println(random);
+    }
 
     public static void chainingConsumerUsage() {
         List<String> list = List.of("a", "b", "c");
