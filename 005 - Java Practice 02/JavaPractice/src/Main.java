@@ -109,5 +109,7 @@ public class Main {
         LambdasDemo.methodRefrenceUsage();
 
         LambdasDemo.consumerInterfaceUsage();
+
+        LambdasDemo.chainingConsumerUsage();
     }
 }

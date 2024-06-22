@@ -8,9 +8,21 @@ package lambdas;
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class LambdasDemo {
+
+    public static void chainingConsumerUsage() {
+        List<String> list = List.of("a", "b", "c");
+
+        Consumer<String> print = item -> System.out.println(item);
+        Consumer<String> printUpperCase = item -> System.out.println(item.toUpperCase());
+
+        list.forEach(print.andThen(printUpperCase).andThen(print));
+    }
+
     public static void consumerInterfaceUsage() {
         List<Integer> list = List.of(1, 2, 3, 4, 5);
 
