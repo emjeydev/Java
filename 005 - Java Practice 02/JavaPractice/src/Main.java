@@ -107,5 +107,7 @@ public class Main {
         LambdasDemo.lambdaExpressionUsage();
 
         LambdasDemo.methodRefrenceUsage();
+
+        LambdasDemo.consumerInterfaceUsage();
     }
 }

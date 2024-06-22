@@ -8,7 +8,19 @@ package lambdas;
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
+import java.util.List;
+
 public class LambdasDemo {
+    public static void consumerInterfaceUsage() {
+        List<Integer> list = List.of(1, 2, 3, 4, 5);
+
+        // Imperative Programming
+        for (Integer item : list)
+            System.out.print(item);
+
+        // Declaritive Programming
+        list.forEach(item -> System.out.print(item));
+    }
 
     public static void methodRefrenceUsage() {
         // Class/Object::method without ()
