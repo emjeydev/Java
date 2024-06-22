@@ -10,6 +10,11 @@ package lambdas;
 
 public class LambdasDemo {
 
+    public static void lambdaExpressionUsage() {
+//        greet((String message) -> {System.out.println(message);});
+        greet(message -> System.out.println(message));
+    }
+
     public static void anonymousInnerClassUsasge() {
         greet(new Printer() {
             @Override

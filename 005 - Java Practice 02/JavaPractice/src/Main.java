@@ -103,5 +103,7 @@ public class Main {
         LambdasDemo.functionalInterfaceUsage();
 
         LambdasDemo.anonymousInnerClassUsasge();
+
+        LambdasDemo.lambdaExpressionUsage();
     }
 }
