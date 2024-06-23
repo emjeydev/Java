@@ -1,5 +1,6 @@
 import collections.*;
 import lambdas.LambdasDemo;
+import streams.StreamDemo;
 
 // This file is made by EmJey
 // Project: JavaPractice.java
@@ -100,6 +101,7 @@ public class Main {
 
         /* Lambdas */
 
+        /*
         LambdasDemo.functionalInterfaceUsage();
 
         LambdasDemo.anonymousInnerClassUsasge();
@@ -125,5 +127,11 @@ public class Main {
         LambdasDemo.binaryOperatorInterfaceUsage();
 
         LambdasDemo.unaryOperatorInterfaceUsage();
+
+         */
+
+        /* Streams */
+
+        StreamDemo.imparitiveAndFunctionalComparision();
     }
 }
