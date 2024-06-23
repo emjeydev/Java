@@ -10,9 +10,24 @@ package streams;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class StreamDemo {
+
+    public static void filteringElementsUsage() {
+        List<Movie> movies = List.of(
+                new Movie("a", 10),
+                new Movie("b", 15),
+                new Movie("c", 20)
+        );
+
+        Predicate<Movie> isPopular = m -> m.getLikes() > 10;
+
+        movies.stream()
+                .filter(isPopular)
+                .forEach(m -> System.out.println(m.getTitle()));
+    }
 
     public static void flatMappingUsage() {
         var stream = Stream.of(List.of(1, 2, 3), List.of(4, 5, 6));

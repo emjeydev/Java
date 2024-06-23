@@ -129,6 +129,7 @@ public class Main {
         LambdasDemo.unaryOperatorInterfaceUsage();
 
          */
+        
 
         /* Streams */
 
@@ -141,5 +142,7 @@ public class Main {
         StreamDemo.mappingElementsUsage();
 
         StreamDemo.flatMappingUsage();
+
+        StreamDemo.filteringElementsUsage();
     }
 }
