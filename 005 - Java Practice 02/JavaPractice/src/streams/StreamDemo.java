@@ -14,6 +14,25 @@ import java.util.stream.Stream;
 
 public class StreamDemo {
 
+    public static void flatMappingUsage() {
+        var stream = Stream.of(List.of(1, 2, 3), List.of(4, 5, 6));
+        stream
+                .flatMap(list -> list.stream())
+                .forEach(n -> System.out.println(n));
+    }
+
+    public static void mappingElementsUsage() {
+        List<Movie> movies = List.of(
+                new Movie("a", 10),
+                new Movie("b", 15),
+                new Movie("c", 20)
+        );
+
+        movies.stream()
+                .map(movie -> movie.getTitle())
+                .forEach(name -> System.out.println(name));
+    }
+
     public static void infiniteStreamUsage() {
         var stream = Stream.generate(() -> Math.random());
 

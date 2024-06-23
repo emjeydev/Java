@@ -137,5 +137,9 @@ public class Main {
         StreamDemo.arrayStreamUsage();
 
         StreamDemo.infiniteStreamUsage();
+
+        StreamDemo.mappingElementsUsage();
+
+        StreamDemo.flatMappingUsage();
     }
 }
