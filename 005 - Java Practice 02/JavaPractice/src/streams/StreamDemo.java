@@ -8,9 +8,28 @@ package streams;
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class StreamDemo {
+
+    public static void infiniteStreamUsage() {
+        var stream = Stream.generate(() -> Math.random());
+
+        stream.limit(5).forEach(n -> System.out.println(n));
+    }
+
+    public static void arrayStreamUsage() {
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        Arrays.stream(numbers)
+                .forEach(n -> System.out.println(n));
+
+        Stream.iterate(1, n -> n + 1)
+                .limit(5)
+                .forEach(n -> System.out.println(n));
+    }
 
     public static void imparitiveAndFunctionalComparision() {
         List<Movie> movies = List.of(

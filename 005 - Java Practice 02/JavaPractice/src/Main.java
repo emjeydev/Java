@@ -133,5 +133,9 @@ public class Main {
         /* Streams */
 
         StreamDemo.imparitiveAndFunctionalComparision();
+
+        StreamDemo.arrayStreamUsage();
+
+        StreamDemo.infiniteStreamUsage();
     }
 }
