@@ -121,5 +121,7 @@ public class Main {
         LambdasDemo.predicateInterfaceUsage();
 
         LambdasDemo.combiningPredicateUsage();
+
+        LambdasDemo.binaryOperatorInterfaceUsage();
     }
 }

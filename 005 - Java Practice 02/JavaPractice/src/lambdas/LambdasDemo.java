@@ -1,10 +1,7 @@
 package lambdas;
 
 import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 // This file is made by EmJey
 // Project: JavaPractice.java
@@ -15,6 +12,14 @@ import java.util.function.Supplier;
 // Github: emjeydev
 
 public class LambdasDemo {
+
+    public static void binaryOperatorInterfaceUsage() {
+        BinaryOperator<Integer> add = (a, b) -> a + b;
+        Function<Integer, Integer> square = a -> a * a;
+
+        var result = add.andThen(square).apply(1, 2);
+        System.out.println(result);
+    }
 
     public static void combiningPredicateUsage() {
         Predicate<String> hasLeftBraces = str -> str.startsWith("{");
@@ -32,8 +37,8 @@ public class LambdasDemo {
     }
 
     public static void composingFunctionUsage() {
-        Function<String,String> replaceColon =  str -> str.replace(":", "=");
-        Function<String, String> addBraces = str -> "{" + str+"}";
+        Function<String, String> replaceColon = str -> str.replace(":", "=");
+        Function<String, String> addBraces = str -> "{" + str + "}";
 
         // Declarative Programming
         var result = replaceColon.andThen(addBraces).apply("key:value");
