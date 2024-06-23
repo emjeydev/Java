@@ -156,5 +156,8 @@ public class Main {
 
         StreamDemo.sortingStreamUsage();
         System.out.println("__________");
+
+        StreamDemo.distinctStreamUsage();
+        System.out.println("__________");
     }
 }

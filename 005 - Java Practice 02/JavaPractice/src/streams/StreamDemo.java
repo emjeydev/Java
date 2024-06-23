@@ -16,6 +16,20 @@ import java.util.stream.Stream;
 
 public class StreamDemo {
 
+    public static void distinctStreamUsage() {
+        List<Movie> movies = List.of(
+                new Movie("a", 10),
+                new Movie("a", 10),
+                new Movie("b", 20),
+                new Movie("c", 30)
+        );
+
+        movies.stream()
+                .map(Movie::getLikes)
+                .distinct()
+                .forEach(System.out::println);
+    }
+
     public static void sortingStreamUsage() {
         List<Movie> movies = List.of(
                 new Movie("c", 10),
