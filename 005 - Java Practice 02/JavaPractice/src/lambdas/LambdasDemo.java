@@ -4,7 +4,7 @@ package lambdas;
 // Project: JavaPractice.java
 // FileName: LambdasDemo.java
 // Date: 2024/06/22
-// Modified Date: 2024/06/22
+// Modified Date: 2024/06/23
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
@@ -12,9 +12,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class LambdasDemo {
+
+    public static void predicateInterfaceUsage() {
+        Predicate<String> isLongerThan5 = str -> str.length() > 5;
+        var result = isLongerThan5.test("Sky");
+        System.out.println(result);
+    }
 
     public static void composingFunctionUsage() {
         Function<String,String> replaceColon =  str -> str.replace(":", "=");

@@ -5,7 +5,7 @@ import lambdas.LambdasDemo;
 // Project: JavaPractice.java
 // FileName: Main.java
 // Date: 2024/06/05
-// Modified Date: 2024/06/22
+// Modified Date: 2024/06/23
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
@@ -117,5 +117,7 @@ public class Main {
         LambdasDemo.functionInterfaceUsage();
 
         LambdasDemo.composingFunctionUsage();
+
+        LambdasDemo.predicateInterfaceUsage();
     }
 }
