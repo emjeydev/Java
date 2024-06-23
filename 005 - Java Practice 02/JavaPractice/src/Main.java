@@ -123,5 +123,7 @@ public class Main {
         LambdasDemo.combiningPredicateUsage();
 
         LambdasDemo.binaryOperatorInterfaceUsage();
+
+        LambdasDemo.unaryOperatorInterfaceUsage();
     }
 }

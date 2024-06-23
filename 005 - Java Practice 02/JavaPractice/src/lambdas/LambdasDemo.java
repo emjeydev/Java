@@ -13,6 +13,14 @@ import java.util.function.*;
 
 public class LambdasDemo {
 
+    public static void unaryOperatorInterfaceUsage() {
+        UnaryOperator<Integer> square = n -> n * n;
+        UnaryOperator<Integer> increment = n -> n + 1;
+
+        var result = increment.andThen(square).apply(1);
+        System.out.println(result);
+    }
+
     public static void binaryOperatorInterfaceUsage() {
         BinaryOperator<Integer> add = (a, b) -> a + b;
         Function<Integer, Integer> square = a -> a * a;
