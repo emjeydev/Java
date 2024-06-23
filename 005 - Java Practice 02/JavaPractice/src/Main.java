@@ -119,5 +119,7 @@ public class Main {
         LambdasDemo.composingFunctionUsage();
 
         LambdasDemo.predicateInterfaceUsage();
+
+        LambdasDemo.combiningPredicateUsage();
     }
 }

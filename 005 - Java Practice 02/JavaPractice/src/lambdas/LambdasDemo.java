@@ -1,5 +1,11 @@
 package lambdas;
 
+import java.util.List;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
 // This file is made by EmJey
 // Project: JavaPractice.java
 // FileName: LambdasDemo.java
@@ -8,14 +14,16 @@ package lambdas;
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
-
 public class LambdasDemo {
+
+    public static void combiningPredicateUsage() {
+        Predicate<String> hasLeftBraces = str -> str.startsWith("{");
+        Predicate<String> hasRightBraces = str -> str.endsWith("}");
+
+        Predicate<String> hasLeftAndRightBraces = hasLeftBraces.and(hasRightBraces);
+        var result = hasLeftAndRightBraces.test("{key:value}");
+        System.out.println(result);
+    }
 
     public static void predicateInterfaceUsage() {
         Predicate<String> isLongerThan5 = str -> str.length() > 5;
