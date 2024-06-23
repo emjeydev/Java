@@ -9,11 +9,25 @@ package streams;
 // Github: emjeydev
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class StreamDemo {
+
+    public static void sortingStreamUsage() {
+        List<Movie> movies = List.of(
+                new Movie("c", 10),
+                new Movie("b", 30),
+                new Movie("a", 20)
+        );
+
+        movies.stream()
+//                .sorted((a, b) -> a.getTitle().compareTo(b.getTitle()))
+                .sorted(Comparator.comparing(Movie::getTitle))
+                .forEach(m -> System.out.println(m.getTitle()));
+    }
 
     public static void slicingStreamUsage() {
         List<Movie> movies = List.of(

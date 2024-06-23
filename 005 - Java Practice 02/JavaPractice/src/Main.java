@@ -153,5 +153,8 @@ public class Main {
 
         StreamDemo.slicingStreamUsage();
         System.out.println("__________");
+
+        StreamDemo.sortingStreamUsage();
+        System.out.println("__________");
     }
 }
