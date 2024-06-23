@@ -15,6 +15,34 @@ import java.util.stream.Stream;
 
 public class StreamDemo {
 
+    public static void slicingStreamUsage() {
+        List<Movie> movies = List.of(
+                new Movie("a", 10),
+                new Movie("b", 30),
+                new Movie("c", 20)
+        );
+
+        System.out.println("limit() :");
+        movies.stream()
+                .limit(2)
+                .forEach(m -> System.out.println(m.getTitle()));
+
+        System.out.println("skip() :");
+        movies.stream()
+                .skip(2)
+                .forEach(m -> System.out.println(m.getTitle()));
+
+        System.out.println("takeWhile() :");
+        movies.stream()
+                .takeWhile(m -> m.getLikes() < 30)
+                .forEach(m -> System.out.println(m.getTitle()));
+
+        System.out.println("dropWhile() :");
+        movies.stream()
+                .takeWhile(m -> m.getLikes() < 30)
+                .forEach(m -> System.out.println(m.getTitle()));
+    }
+
     public static void filteringElementsUsage() {
         List<Movie> movies = List.of(
                 new Movie("a", 10),

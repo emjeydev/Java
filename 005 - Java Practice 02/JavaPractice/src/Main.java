@@ -129,20 +129,29 @@ public class Main {
         LambdasDemo.unaryOperatorInterfaceUsage();
 
          */
-        
+
 
         /* Streams */
 
         StreamDemo.imparitiveAndFunctionalComparision();
+        System.out.println("__________");
 
         StreamDemo.arrayStreamUsage();
+        System.out.println("__________");
 
         StreamDemo.infiniteStreamUsage();
+        System.out.println("__________");
 
         StreamDemo.mappingElementsUsage();
+        System.out.println("__________");
 
         StreamDemo.flatMappingUsage();
+        System.out.println("__________");
 
         StreamDemo.filteringElementsUsage();
+        System.out.println("__________");
+
+        StreamDemo.slicingStreamUsage();
+        System.out.println("__________");
     }
 }
