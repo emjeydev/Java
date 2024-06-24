@@ -174,5 +174,8 @@ public class Main {
 
         StreamDemo.groupingElementsUsage();
         System.out.println("__________");
+
+        StreamDemo.partitioningElementsUsage();
+        System.out.println("__________");
     }
 }

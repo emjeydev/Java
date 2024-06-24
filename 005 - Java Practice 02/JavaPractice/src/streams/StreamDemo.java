@@ -20,6 +20,22 @@ import java.util.stream.Stream;
 
 public class StreamDemo {
 
+    public static void partitioningElementsUsage() {
+        List<Movie> movies = List.of(
+                new Movie("a", 10, Genre.THRILLER),
+                new Movie("b", 20, Genre.ACTION),
+                new Movie("c", 30, Genre.ACTION)
+        );
+
+        var result = movies.stream()
+                .collect(Collectors.partitioningBy(
+                        m -> m.getLikes() > 20,
+                        Collectors.mapping(Movie::getTitle,
+                                Collectors.joining(", "))
+                ));
+        System.out.println(result);
+    }
+
     public static void groupingElementsUsage() {
         List<Movie> movies = List.of(
                 new Movie("a", 10, Genre.THRILLER),
@@ -29,15 +45,15 @@ public class StreamDemo {
 
         var groupingResult = movies.stream()
                 .collect(Collectors.groupingBy(Movie::getGenre));
-        System.out.println("groupingBy Genre: "+groupingResult);
+        System.out.println("groupingBy Genre: " + groupingResult);
 
         var groupingToSetResult = movies.stream()
                 .collect(Collectors.groupingBy(Movie::getGenre, Collectors.toSet()));
-        System.out.println("toSet result: "+groupingToSetResult);
+        System.out.println("toSet result: " + groupingToSetResult);
 
         var countResult = movies.stream()
                 .collect(Collectors.groupingBy(Movie::getGenre, Collectors.counting()));
-        System.out.println("count result: "+countResult);
+        System.out.println("count result: " + countResult);
 
         var joiningResult = movies.stream()
                 .collect(Collectors.groupingBy(
