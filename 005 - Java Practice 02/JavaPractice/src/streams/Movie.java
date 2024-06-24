@@ -4,17 +4,25 @@ package streams;
 // Project: JavaPractice.java
 // FileName: Movie.java
 // Date: 2024/06/22
-// Modified Date: 2024/06/23
+// Modified Date: 2024/06/24
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
 public class Movie {
     private String title;
     private int likes;
+    private Genre genre;
 
     public Movie(String title, int likes) {
         this.title = title;
         this.likes = likes;
+
+    }
+
+    public Movie(String title, int likes, Genre genre) {
+        this.title = title;
+        this.likes = likes;
+        this.genre = genre;
     }
 
 
@@ -24,5 +32,9 @@ public class Movie {
 
     public String getTitle() {
         return title;
+    }
+
+    public Genre getGenre() {
+        return genre;
     }
 }

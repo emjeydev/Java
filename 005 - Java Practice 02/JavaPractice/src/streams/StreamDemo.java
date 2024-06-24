@@ -20,6 +20,35 @@ import java.util.stream.Stream;
 
 public class StreamDemo {
 
+    public static void groupingElementsUsage() {
+        List<Movie> movies = List.of(
+                new Movie("a", 10, Genre.THRILLER),
+                new Movie("b", 20, Genre.ACTION),
+                new Movie("c", 30, Genre.ACTION)
+        );
+
+        var groupingResult = movies.stream()
+                .collect(Collectors.groupingBy(Movie::getGenre));
+        System.out.println("groupingBy Genre: "+groupingResult);
+
+        var groupingToSetResult = movies.stream()
+                .collect(Collectors.groupingBy(Movie::getGenre, Collectors.toSet()));
+        System.out.println("toSet result: "+groupingToSetResult);
+
+        var countResult = movies.stream()
+                .collect(Collectors.groupingBy(Movie::getGenre, Collectors.counting()));
+        System.out.println("count result: "+countResult);
+
+        var joiningResult = movies.stream()
+                .collect(Collectors.groupingBy(
+                        Movie::getGenre,
+                        Collectors.mapping(
+                                Movie::getTitle,
+                                Collectors.joining(", "))));
+        System.out.println("joining result: " + joiningResult);
+
+    }
+
     public static void collectMethodUsage() {
         List<Movie> movies = List.of(
                 new Movie("a", 10),

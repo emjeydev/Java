@@ -171,5 +171,8 @@ public class Main {
 
         StreamDemo.collectMethodUsage();
         System.out.println("__________");
+
+        StreamDemo.groupingElementsUsage();
+        System.out.println("__________");
     }
 }
