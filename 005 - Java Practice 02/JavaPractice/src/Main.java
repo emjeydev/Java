@@ -165,5 +165,8 @@ public class Main {
 
         StreamDemo.simpleReducersUsage();
         System.out.println("__________");
+
+        StreamDemo.reduceMethodUsage();
+        System.out.println("__________");
     }
 }

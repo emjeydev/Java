@@ -3,6 +3,7 @@ package streams;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -17,6 +18,26 @@ import java.util.stream.Stream;
 
 
 public class StreamDemo {
+
+    public static void reduceMethodUsage() {
+        List<Movie> movies = List.of(
+                new Movie("a", 10),
+                new Movie("b", 20),
+                new Movie("c", 30)
+        );
+
+        Optional<Integer> sum = movies.stream()
+                .map(m -> m.getLikes())
+//                .reduce((a, b) -> a + b);
+                .reduce(Integer::sum);
+//        System.out.println(sum.get()); It may throw an exception so:
+        System.out.println("optional object: " + sum.orElse(0));
+
+        Integer sumInteger = movies.stream()
+                .map(m -> m.getLikes())
+                .reduce(0, Integer::sum);
+        System.out.println("integer object: " + sumInteger);
+    }
 
     public static void simpleReducersUsage() {
         List<Movie> movies = List.of(
