@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 
@@ -19,6 +20,14 @@ import java.util.stream.Stream;
 
 
 public class StreamDemo {
+
+    public static void primitiveTypeStreamUsage() {
+        IntStream.range(1, 5)
+                .forEach(System.out::println);
+
+        IntStream.rangeClosed(1, 5)
+                .forEach(System.out::println);
+    }
 
     public static void partitioningElementsUsage() {
         List<Movie> movies = List.of(

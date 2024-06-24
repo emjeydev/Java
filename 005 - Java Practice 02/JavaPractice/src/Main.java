@@ -177,5 +177,8 @@ public class Main {
 
         StreamDemo.partitioningElementsUsage();
         System.out.println("__________");
+
+        StreamDemo.primitiveTypeStreamUsage();
+        System.out.println("__________");
     }
 }
