@@ -162,5 +162,8 @@ public class Main {
 
         StreamDemo.peekMethodUsage();
         System.out.println("__________");
+
+        StreamDemo.simpleReducersUsage();
+        System.out.println("__________");
     }
 }

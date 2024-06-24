@@ -18,6 +18,42 @@ import java.util.stream.Stream;
 
 public class StreamDemo {
 
+    public static void simpleReducersUsage() {
+        List<Movie> movies = List.of(
+                new Movie("a", 10),
+                new Movie("b", 20),
+                new Movie("c", 30)
+        );
+
+        var count = movies.stream()
+                .count();
+        System.out.println("count() :" + count);
+
+        var anyMatchResult = movies.stream()
+                .anyMatch(m -> m.getLikes() > 20);
+        System.out.println("anyMatchResult(): " + anyMatchResult);
+
+        var allMatchResult = movies.stream()
+                .allMatch(m -> m.getLikes() > 20);
+        System.out.println("allMatchResult(): " + allMatchResult);
+
+        var nonMatchResult = movies.stream()
+                .noneMatch(m -> m.getLikes() > 20);
+        System.out.println("noneMatchResult(): " + nonMatchResult);
+
+        var findFirstResult = movies.stream()
+                .findFirst().get();
+        System.out.println("findFirstResult(): " + findFirstResult.getTitle());
+
+        var findAnyResult = movies.stream()
+                .findAny().get();
+        System.out.println("findAnyResult(): " + findAnyResult.getTitle());
+
+        var maxResult = movies.stream()
+                .max(Comparator.comparing(Movie::getLikes)).get();
+        System.out.println("maxResult(): " + maxResult.getTitle());
+    }
+
     public static void peekMethodUsage() {
         List<Movie> movies = List.of(
                 new Movie("a", 10),
