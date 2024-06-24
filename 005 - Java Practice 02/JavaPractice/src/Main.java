@@ -168,5 +168,8 @@ public class Main {
 
         StreamDemo.reduceMethodUsage();
         System.out.println("__________");
+
+        StreamDemo.collectMethodUsage();
+        System.out.println("__________");
     }
 }

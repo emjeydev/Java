@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
@@ -18,6 +19,45 @@ import java.util.stream.Stream;
 
 
 public class StreamDemo {
+
+    public static void collectMethodUsage() {
+        List<Movie> movies = List.of(
+                new Movie("a", 10),
+                new Movie("b", 20),
+                new Movie("c", 30)
+        );
+
+        var lisResult = movies.stream()
+                .filter(m -> m.getLikes() > 10)
+                .collect(Collectors.toList());
+        System.out.println("list: " + lisResult);
+
+        var setResult = movies.stream()
+                .filter(m -> m.getLikes() > 10)
+                .collect(Collectors.toSet());
+        System.out.println("set: " + setResult);
+
+        var mapResult = movies.stream()
+                .filter(m -> m.getLikes() > 10)
+                .collect(Collectors.toMap(Movie::getTitle, Movie::getLikes));
+        System.out.println("map: " + mapResult);
+
+        var summingIntResult = movies.stream()
+                .filter(m -> m.getLikes() > 10)
+                .collect(Collectors.summingInt(Movie::getLikes));
+        System.out.println("summingInt: " + summingIntResult);
+
+        var summarizingIntResult = movies.stream()
+                .filter(m -> m.getLikes() > 10)
+                .collect(Collectors.summarizingInt(Movie::getLikes));
+        System.out.println("summarizingInt: " + summarizingIntResult);
+
+        var joiningResult = movies.stream()
+                .filter(m -> m.getLikes() > 10)
+                .map(Movie::getTitle)
+                .collect(Collectors.joining(", "));
+        System.out.println("joining: " + joiningResult);
+    }
 
     public static void reduceMethodUsage() {
         List<Movie> movies = List.of(
