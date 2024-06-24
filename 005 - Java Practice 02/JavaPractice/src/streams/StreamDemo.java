@@ -1,20 +1,38 @@
 package streams;
 
-// This file is made by EmJey
-// Project: JavaPractice.java
-// FileName: StreamDemo.java
-// Date: 2024/06/22
-// Modified Date: 2024/06/23
-// Email: emjeydev@gmail.com
-// Github: emjeydev
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
+
+// This file is made by EmJey
+// Project: JavaPractice.java
+// FileName: StreamDemo.java
+// Date: 2024/06/22
+// Modified Date: 2024/06/24
+// Email: emjeydev@gmail.com
+// Github: emjeydev
+
+
 public class StreamDemo {
+
+    public static void peekMethodUsage() {
+        List<Movie> movies = List.of(
+                new Movie("a", 10),
+                new Movie("a", 10),
+                new Movie("b", 20),
+                new Movie("c", 30)
+        );
+
+        movies.stream()
+                .filter(m -> m.getLikes() > 10)
+                .peek(m -> System.out.println("filtered: " + m.getTitle()))
+                .map(Movie::getTitle)
+                .peek(t -> System.out.println("mapped: " + t))
+                .forEach(System.out::println);
+    }
 
     public static void distinctStreamUsage() {
         List<Movie> movies = List.of(

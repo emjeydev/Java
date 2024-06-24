@@ -6,7 +6,7 @@ import streams.StreamDemo;
 // Project: JavaPractice.java
 // FileName: Main.java
 // Date: 2024/06/05
-// Modified Date: 2024/06/23
+// Modified Date: 2024/06/24
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
@@ -158,6 +158,9 @@ public class Main {
         System.out.println("__________");
 
         StreamDemo.distinctStreamUsage();
+        System.out.println("__________");
+
+        StreamDemo.peekMethodUsage();
         System.out.println("__________");
     }
 }
