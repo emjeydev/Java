@@ -203,8 +203,13 @@ public class Main {
         ThreadDemo.raceConditionInThread();
         System.out.println("__________");
 
- */
+
         ThreadDemo.confinementSolutionForThread();
+        System.out.println("__________");
+        
+ */
+
+        ThreadDemo.synchronizationUsingLocks();
         System.out.println("__________");
     }
 }
