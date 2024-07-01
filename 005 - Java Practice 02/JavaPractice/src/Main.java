@@ -199,8 +199,12 @@ public class Main {
 
         ThreadDemo.interruptThreadUsage();
         System.out.println("__________");
-*/        
+
         ThreadDemo.raceConditionInThread();
+        System.out.println("__________");
+
+ */
+        ThreadDemo.confinementSolutionForThread();
         System.out.println("__________");
     }
 }

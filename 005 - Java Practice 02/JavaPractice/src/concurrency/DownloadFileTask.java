@@ -10,6 +10,7 @@ package concurrency;
 
 
 public class DownloadFileTask implements Runnable {
+
     private DownloadStatus status;
 
     public DownloadFileTask(DownloadStatus status) {
@@ -17,8 +18,10 @@ public class DownloadFileTask implements Runnable {
     }
 
     public DownloadFileTask() {
-
+        this.status = new DownloadStatus();
     }
+
+
 
 /*
 
@@ -67,6 +70,10 @@ public class DownloadFileTask implements Runnable {
         }
 
         System.out.println("Download complete: " + Thread.currentThread().getName());
+    }
+
+    public DownloadStatus getStatus() {
+        return status;
     }
 
 }

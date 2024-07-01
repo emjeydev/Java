@@ -14,6 +14,35 @@ import java.util.List;
 
 public class ThreadDemo {
 
+    public static void confinementSolutionForThread() {
+
+        List<Thread> threadList = new ArrayList<>();
+        List<DownloadFileTask> taskList = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            var task = new DownloadFileTask();
+            taskList.add(task);
+
+            var thread = new Thread(task);
+            thread.start();
+            threadList.add(thread);
+        }
+
+        for (var thread : threadList) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        var totalBytes = taskList.stream()
+                .map(t -> t.getStatus().getTotalByte())
+                .reduce(Integer::sum);
+
+        System.out.println(totalBytes);
+    }
+
     public static void raceConditionInThread() {
         var status = new DownloadStatus();
 
