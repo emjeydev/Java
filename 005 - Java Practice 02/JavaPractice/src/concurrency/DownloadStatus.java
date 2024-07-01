@@ -8,23 +8,34 @@ package concurrency;
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
+import java.util.Objects;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class DownloadStatus {
     private int totalByte;
-    private Lock lock = new ReentrantLock();
+    //    private Lock lock = new ReentrantLock();
+    private final Object totalBytesLock = new Object();
 
     public int getTotalByte() {
         return totalByte;
     }
 
+/*
+    // lock
     public void incrementTotalByte() {
         lock.lock();
         try {
             totalByte++;
         } finally {
             lock.unlock();
+        }
+    }
+*/
+
+    public void incrementTotalByte() {
+        synchronized (totalBytesLock) {
+            totalByte++;
         }
     }
 }

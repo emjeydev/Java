@@ -206,7 +206,7 @@ public class Main {
 
         ThreadDemo.confinementSolutionForThread();
         System.out.println("__________");
-        
+
  */
 
         ThreadDemo.synchronizationUsingLocks();
