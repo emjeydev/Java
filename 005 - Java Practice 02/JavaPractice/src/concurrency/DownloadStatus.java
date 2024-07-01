@@ -10,18 +10,21 @@ package concurrency;
 
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.LongAdder;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class DownloadStatus {
     //    private volatile boolean done;
     private boolean done;
-    private AtomicInteger totalByte = new AtomicInteger();
+    //    private AtomicInteger totalByte = new AtomicInteger();
+    private LongAdder totalByte = new LongAdder();
     //    private Lock lock = new ReentrantLock();
     private final Object totalBytesLock = new Object();
 
     public int getTotalByte() {
-        return totalByte.get();
+//        return totalByte.get();
+        return totalByte.intValue();
     }
 
 /*
@@ -40,7 +43,8 @@ public class DownloadStatus {
 //        synchronized (totalBytesLock) {
 //            totalByte++;
 //        }
-        totalByte.incrementAndGet();
+//        totalByte.incrementAndGet();
+        totalByte.increment();
     }
 
     public boolean isDone() {
