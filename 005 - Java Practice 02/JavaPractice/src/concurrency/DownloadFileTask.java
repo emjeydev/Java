@@ -8,7 +8,17 @@ package concurrency;
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
+
 public class DownloadFileTask implements Runnable {
+    private DownloadStatus status;
+
+    public DownloadFileTask(DownloadStatus status) {
+        this.status = status;
+    }
+
+    public DownloadFileTask() {
+
+    }
 
 /*
 
@@ -27,6 +37,8 @@ public class DownloadFileTask implements Runnable {
     }
 */
 
+/*
+
     // Interrupting a thread
     @Override
     public void run() {
@@ -40,4 +52,21 @@ public class DownloadFileTask implements Runnable {
 
         System.out.println("Download complete: " + Thread.currentThread().getName());
     }
+
+*/
+
+    // Race Condition
+    @Override
+    public void run() {
+        System.out.println("Downloading file... :" + Thread.currentThread().getName());
+
+        for (int i = 0; i < 10_000; i++) {
+            if (Thread.currentThread().isInterrupted())
+                return;
+            status.incrementTotalByte();
+        }
+
+        System.out.println("Download complete: " + Thread.currentThread().getName());
+    }
+
 }

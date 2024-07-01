@@ -197,9 +197,10 @@ public class Main {
         ThreadDemo.createThreadUsage();
         System.out.println("__________");
 
-*/
-
         ThreadDemo.interruptThreadUsage();
+        System.out.println("__________");
+*/        
+        ThreadDemo.raceConditionInThread();
         System.out.println("__________");
     }
 }
