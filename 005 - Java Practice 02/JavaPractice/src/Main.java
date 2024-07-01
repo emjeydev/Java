@@ -209,9 +209,12 @@ public class Main {
         ThreadDemo.synchronizationUsingLocks();
         System.out.println("__________");
 
+        ThreadDemo.volatileUsage();
+        System.out.println("__________");
+
  */
 
-        ThreadDemo.volatileUsage();
+        ThreadDemo.atomicObjectUsage();
         System.out.println("__________");
     }
 }

@@ -14,6 +14,28 @@ import java.util.List;
 
 public class ThreadDemo {
 
+    public static void atomicObjectUsage() {
+        var status = new DownloadStatus();
+
+        List<Thread> threadList = new ArrayList<>();
+
+        for (int i = 0; i < 10; i++) {
+            var thread = new Thread(new DownloadFileTask(status));
+            thread.start();
+            threadList.add(thread);
+        }
+
+        for (var thread : threadList) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println(status.getTotalByte());
+    }
+
     public static void volatileUsage() {
         var status = new DownloadStatus();
         var thread1 = new Thread(new DownloadFileTask(status));
