@@ -188,10 +188,18 @@ public class Main {
 
         /* Concurrency and Multi-threading */
 
+/*
+
         System.out.println(Thread.activeCount());
         System.out.println(Runtime.getRuntime().availableProcessors());
         System.out.println("__________");
 
         ThreadDemo.createThreadUsage();
+        System.out.println("__________");
+
+*/
+
+        ThreadDemo.interruptThreadUsage();
+        System.out.println("__________");
     }
 }
