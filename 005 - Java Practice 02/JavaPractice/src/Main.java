@@ -1,4 +1,5 @@
 import collections.*;
+import concurrency.ThreadDemo;
 import lambdas.LambdasDemo;
 import streams.StreamDemo;
 
@@ -6,7 +7,7 @@ import streams.StreamDemo;
 // Project: JavaPractice.java
 // FileName: Main.java
 // Date: 2024/06/05
-// Modified Date: 2024/06/24
+// Modified Date: 2024/07/01
 // Email: emjeydev@gmail.com
 // Github: emjeydev
 
@@ -101,7 +102,7 @@ public class Main {
 
         /* Lambdas */
 
-        /*
+/*
         LambdasDemo.functionalInterfaceUsage();
 
         LambdasDemo.anonymousInnerClassUsasge();
@@ -128,11 +129,12 @@ public class Main {
 
         LambdasDemo.unaryOperatorInterfaceUsage();
 
-         */
+*/
 
 
         /* Streams */
 
+/*
         StreamDemo.imparitiveAndFunctionalComparision();
         System.out.println("__________");
 
@@ -180,5 +182,16 @@ public class Main {
 
         StreamDemo.primitiveTypeStreamUsage();
         System.out.println("__________");
+
+ */
+
+
+        /* Concurrency and Multi-threading */
+
+        System.out.println(Thread.activeCount());
+        System.out.println(Runtime.getRuntime().availableProcessors());
+        System.out.println("__________");
+
+        ThreadDemo.createThreadUsage();
     }
 }
