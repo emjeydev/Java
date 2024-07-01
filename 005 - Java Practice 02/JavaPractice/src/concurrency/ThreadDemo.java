@@ -1,7 +1,6 @@
 package concurrency;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 // This file is made by EmJey
 // Project: JavaPractice.java
@@ -13,6 +12,30 @@ import java.util.List;
 
 
 public class ThreadDemo {
+
+    public static void synchronizedCollectionUsgae() {
+        Collection<Integer> collection = Collections.synchronizedCollection(new ArrayList<>());
+
+        var thread1 = new Thread(() -> {
+            collection.addAll(Arrays.asList(1, 2, 3));
+        });
+
+        var thread2 = new Thread(() -> {
+            collection.addAll(Arrays.asList(4, 5, 6));
+        });
+
+        thread1.start();
+        thread2.start();
+
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(collection);
+    }
 
     public static void atomicObjectUsage() {
         var status = new DownloadStatus();

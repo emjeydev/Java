@@ -212,9 +212,12 @@ public class Main {
         ThreadDemo.volatileUsage();
         System.out.println("__________");
 
+        ThreadDemo.atomicObjectUsage();
+        System.out.println("__________");
+
  */
 
-        ThreadDemo.atomicObjectUsage();
+        ThreadDemo.synchronizedCollectionUsgae();
         System.out.println("__________");
     }
 }
