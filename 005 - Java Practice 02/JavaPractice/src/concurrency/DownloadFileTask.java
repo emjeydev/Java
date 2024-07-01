@@ -58,6 +58,7 @@ public class DownloadFileTask implements Runnable {
 
 */
 
+/*
     // Race Condition
     @Override
     public void run() {
@@ -71,9 +72,27 @@ public class DownloadFileTask implements Runnable {
 
         System.out.println("Download complete: " + Thread.currentThread().getName());
     }
+ */
+
+    // Volatile Usage
+    @Override
+    public void run() {
+        System.out.println("Downloading file... :" + Thread.currentThread().getName());
+
+        for (int i = 0; i < 1_000_000; i++) {
+            if (Thread.currentThread().isInterrupted())
+                return;
+            status.incrementTotalByte();
+        }
+
+        status.done();
+
+        System.out.println("Download complete: " + Thread.currentThread().getName());
+    }
 
     public DownloadStatus getStatus() {
         return status;
     }
+
 
 }
